@@ -17,17 +17,17 @@ cars = [
 
 #we want all cars produced after 2015 with list comprehension
 carsProducedAfter15 = []
-for i in cars: 
-    if i[1] > 2015:
-        carsProducedAfter15.append(i)
+for (car, model) in cars: 
+    if model > 2015:
+        carsProducedAfter15.append((car, model))
 print(carsProducedAfter15)
 
 #the same with a list comprehension
-carsAfter15 = [i for i in cars if i[1] > 2015]
+carsAfter15 = [(car, model) for (car, model) in cars if model > 2015]
 print(carsAfter15)
 
 #make a list comprehension do find all Ford
-Fords = [i for i in cars if i[0][0] == "F"]
+Fords = [(car, model) for (car, model) in cars if car[0] == "F"]
 print(Fords)
 
 #can you make a list comprehension for only print all cars made before 2010?
